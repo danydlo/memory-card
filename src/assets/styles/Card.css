@@ -1,23 +1,24 @@
+hr {
+  margin: 0;
+  border: none;
+  height: 0.1rem;
+  width: 100%;
+  background: lightslategray;
+}
+
 .pokecard {
   border: 2px solid lightslategray;
-  font-size: 1rem;
-  width: 14rem;
-  transition: all 0.2s linear;
+  width: 10rem;
   background: lightblue;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .pokecard:hover {
-  width: 14.5rem;
-  font-size: 1.1rem;
-  transition: all 0.2s linear;
-}
-
-.pokecard > img {
-  border-bottom: 1px solid lightslategray;
+  transform: scale(1.1);
 }
 
 .pokecard > h3 {

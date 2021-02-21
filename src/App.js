@@ -1,29 +1,42 @@
 import { useState, useEffect } from 'react'
+import { makeLevel, shuffleArray, checkPokes } from './utils/app'
 import Card from './components/Card'
 import './assets/styles/App.css'
 
 function App() {
-  const [pokemon, setPokemon] = useState({})
+  const [pokemon, setPokemon] = useState([])
 
-  const touched = () => {
-    if (!pokemon.touched) setPokemon((prevState) => ({ ...prevState, touched: true }))
+  const touched = (id) => {
+    const index = pokemon.findIndex((el) => el.id === id)
+
+    if (pokemon[index].touched) {
+      // game over
+      console.log('Game Over!')
+    } else {
+      let shuffled = [...pokemon]
+      shuffled[index].touched = true
+      // check for end of level
+      if (!checkPokes(shuffled)) {
+        // shuffle cards
+        shuffleArray(shuffled)
+        setPokemon(shuffled)
+      } else {
+        // new level
+        const level = makeLevel(pokemon.length + 2)
+        setPokemon(level)
+      }
+    }
   }
 
+  // on mount set up cards
   useEffect(() => {
-    const poke = {
-      id: 0,
-      url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/123.png',
-      touched: false
-    }
-
-    setPokemon(poke)
+    const level = makeLevel(4)
+    setPokemon(level)
   }, [])
 
-  return (
-    <>
-      <Card pokemon={pokemon} touched={touched} />
-    </>
-  )
+  const cards = pokemon.map((poke) => <Card pokemon={poke} touched={touched} key={poke.id} />)
+
+  return <div className="container">{cards}</div>
 }
 
 export default App
