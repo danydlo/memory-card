@@ -8,7 +8,7 @@ hr {
 
 .pokecard {
   border: 2px solid lightslategray;
-  width: 10rem;
+  width: 5rem;
   background: lightblue;
   display: flex;
   flex-direction: column;
@@ -17,13 +17,25 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 
-.pokecard:hover {
-  transform: scale(1.1);
-}
-
 .pokecard > h3 {
   font-size: inherit;
-  font-weight: 600;
+  font-weight: 400;
   color: black;
-  letter-spacing: 2px;
+  letter-spacing: normal;
+}
+
+@media only screen and (min-width: 700px) {
+  .pokecard {
+    width: 10rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .pokecard:hover {
+    transform: scale(1.1);
+  }
+
+  .pokecard > h3 {
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
 }

@@ -1,4 +1,4 @@
-import '../assets/styles/Card.css'
+import '../styles/Card.css'
 
 function Card({ pokemon, touched }) {
   return (

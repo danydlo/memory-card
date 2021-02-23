@@ -8,6 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
 }
