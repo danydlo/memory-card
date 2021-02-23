@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'Pokemon';
+  src: url(../fonts/Pokemon.ttf);
+}
+
+#root {
+  height: 100vh;
+}
+
+button {
+  background: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+}
+
+.memory-card-game {
+  height: 100%;
+}

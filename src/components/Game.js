@@ -3,7 +3,7 @@ import { makeLevel, shuffleArray, checkPokes } from '../utils/game'
 import Card from './Card'
 import '../styles/Game.css'
 
-function Game() {
+function Game({ changeScore, gameStatus }) {
   const [pokemon, setPokemon] = useState([])
 
   const touched = (id) => {
@@ -11,8 +11,11 @@ function Game() {
 
     if (pokemon[index].touched) {
       // game over
-      console.log('Game Over!')
+      changeScore(true)
+      gameStatus(true)
     } else {
+      // update score
+      changeScore(false)
       let shuffled = [...pokemon]
       shuffled[index].touched = true
       // check for end of level
