@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/memory-card/static/css/main.d7ea3122.chunk.css",
+    "main.css": "/memory-card/static/css/main.23f75459.chunk.css",
     "main.js": "/memory-card/static/js/main.2e83bfb6.chunk.js",
     "main.js.map": "/memory-card/static/js/main.2e83bfb6.chunk.js.map",
     "runtime-main.js": "/memory-card/static/js/runtime-main.714dd9e2.js",
@@ -8,14 +8,14 @@
     "static/js/2.9e4ce575.chunk.js": "/memory-card/static/js/2.9e4ce575.chunk.js",
     "static/js/2.9e4ce575.chunk.js.map": "/memory-card/static/js/2.9e4ce575.chunk.js.map",
     "index.html": "/memory-card/index.html",
-    "static/css/main.d7ea3122.chunk.css.map": "/memory-card/static/css/main.d7ea3122.chunk.css.map",
+    "static/css/main.23f75459.chunk.css.map": "/memory-card/static/css/main.23f75459.chunk.css.map",
     "static/js/2.9e4ce575.chunk.js.LICENSE.txt": "/memory-card/static/js/2.9e4ce575.chunk.js.LICENSE.txt",
     "static/media/App.css": "/memory-card/static/media/Pokemon.5d60be1f.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.714dd9e2.js",
     "static/js/2.9e4ce575.chunk.js",
-    "static/css/main.d7ea3122.chunk.css",
+    "static/css/main.23f75459.chunk.css",
     "static/js/main.2e83bfb6.chunk.js"
   ]
 }
