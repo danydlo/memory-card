@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.288);
+  background: rgb(37, 37, 37);
 }
 
 .gameover > h1 {

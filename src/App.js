@@ -3,14 +3,18 @@ import { useState, useEffect } from 'react'
 import Game from './components/Game'
 import Navbar from './components/Navbar'
 import GameOver from './components/GameOver'
+import GameModal from './components/GameModal'
 
 import './styles/App.css'
 
 function App() {
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(0)
-  const [gameover, setGameover] = useState(true)
+  const [gameover, setGameover] = useState(false)
+  const [show, setShow] = useState(true)
 
+  const gameStatus = (status) => setGameover(status)
+  const changeShow = () => setShow(false)
   const changeScore = (gameover) => {
     setScore((prevScore) => {
       if (gameover) return 0
@@ -18,24 +22,23 @@ function App() {
     })
   }
 
-  const gameStatus = (status) => {
-    setGameover(status)
-  }
-
   useEffect(() => {
     if (score > highScore) setHighScore(score)
-  }, [score])
+  }, [score, highScore])
 
-  const body = gameover ? (
-    <GameOver gameover={gameover} score={score} gameStatus={gameStatus} />
-  ) : (
-    <div className="memory-card-game">
-      <Navbar score={score} highScore={highScore} />
-      <Game changeScore={changeScore} gameStatus={gameStatus} />
-    </div>
-  )
-
-  return body
+  if (gameover) {
+    return <GameOver gameover={gameover} score={score} gameStatus={gameStatus} />
+  } else {
+    return (
+      <>
+        <GameModal show={show} changeShow={changeShow} />
+        <div className="memory-card-game">
+          <Navbar score={score} highScore={highScore} />
+          <Game changeScore={changeScore} gameStatus={gameStatus} />
+        </div>
+      </>
+    )
+  }
 }
 
 export default App
