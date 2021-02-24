@@ -12,8 +12,12 @@ function App() {
   const [highScore, setHighScore] = useState(0)
   const [gameover, setGameover] = useState(false)
   const [show, setShow] = useState(true)
+  const [finalScore, setFinalScore] = useState(0)
 
-  const gameStatus = (status) => setGameover(status)
+  const gameStatus = (status) => {
+    setFinalScore(score)
+    setGameover(status)
+  }
   const changeShow = () => setShow(false)
   const changeScore = (gameover) => {
     setScore((prevScore) => {
@@ -27,7 +31,7 @@ function App() {
   }, [score, highScore])
 
   if (gameover) {
-    return <GameOver gameover={gameover} score={score} gameStatus={gameStatus} />
+    return <GameOver gameover={gameover} score={finalScore} gameStatus={gameStatus} />
   } else {
     return (
       <>

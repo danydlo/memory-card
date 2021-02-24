@@ -11,8 +11,8 @@ function Game({ changeScore, gameStatus }) {
 
     if (pokemon[index].touched) {
       // game over
-      changeScore(true)
       gameStatus(true)
+      changeScore(true)
     } else {
       // update score
       changeScore(false)
